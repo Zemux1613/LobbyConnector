@@ -52,12 +52,10 @@ public class ServerUtil {
                 itemMeta.setDisplayName("§e" + service.getName());
                 item.setAmount(1);
                 ArrayList<String> itemL = new ArrayList<>();
-                itemL.add("§7§m----------------------");
                 itemL.add("§7");
                 itemL.add("§7MOTD: §f" + service.getMOTD());
                 itemL.add("§7Spieler: §f" + service.getOnlineCount() + " §8/ §f" + service.getMaxPlayers());
                 itemL.add("§7");
-                itemL.add("§7§m----------------------");
                 itemMeta.setLore(itemL);
                 item.setItemMeta(itemMeta);
 
@@ -70,17 +68,15 @@ public class ServerUtil {
                     itemMeta.setDisplayName("§7" + service.getName());
                     item.setAmount(1);
                     ArrayList<String> itemL = new ArrayList<>();
-                    itemL.add("§7§m----------------------");
                     itemL.add("§7");
-                    itemL.add("§7MOTD: §a" + service.getMOTD());
+                    itemL.add("§7MOTD: §f" + service.getMOTD());
                     itemL.add("§7Status: §cSpectate");
-                    itemL.add("§7Spieler: §a" + service.getOnlineCount() + " §8/ §a" + service.getMaxPlayers());
+                    itemL.add("§7Spieler: §f" + service.getOnlineCount() + " §8/ §f" + service.getMaxPlayers());
                     itemL.add("§7");
-                    itemL.add("§7§m----------------------");
                     itemMeta.setLore(itemL);
                     item.setItemMeta(itemMeta);
 
-                    inventory.setItem(slot, item);
+                    inventory.setItem(spec, item);
                     spec++;
                 }
         }
