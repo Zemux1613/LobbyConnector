@@ -1,0 +1,5 @@
+name: LobbyConnector
+version: 1.0
+authors:
+  - 1combit
+main: de.combit.lobby.LobbyConnector
