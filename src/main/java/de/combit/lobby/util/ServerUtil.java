@@ -1,11 +1,13 @@
 package de.combit.lobby.util;
 
+import de.combit.lobby.LobbyConnector;
 import eu.thesimplecloud.api.CloudAPI;
 import eu.thesimplecloud.api.service.ICloudService;
 import eu.thesimplecloud.api.service.ServiceState;
 import lombok.experimental.UtilityClass;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -19,8 +21,9 @@ import java.util.ArrayList;
 @UtilityClass
 public class ServerUtil {
 
-    public void createServiceGUI(String serviceGroup, String material,  Player player) {
-        Inventory inventory = Bukkit.createInventory(null, 6*9 , "§8» §6" + serviceGroup);
+    public void createServiceGUI(String serviceGroup, String title , String material,  Player player) {
+        FileConfiguration configuration = LobbyConnector.instance.getSettingsConfig();
+        Inventory inventory = Bukkit.createInventory(null, 6*9 , title);
         ItemStack grey = ItemBuilder.create(Material.STAINED_GLASS_PANE, "§8", 7);
         inventory.setItem(0, grey);
         inventory.setItem(1, grey);
